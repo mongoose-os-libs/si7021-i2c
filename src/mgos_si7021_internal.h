@@ -21,32 +21,32 @@
 #include "mgos_si7021.h"
 #include <math.h>
 
-#define MGOS_SI7021_DEFAULT_I2CADDR       (0x40)
+#define MGOS_SI7021_DEFAULT_I2CADDR        (0x40)
 
-#define MGOS_SI7021_MEASRH_HOLD_CMD       (0xE5)
-#define MGOS_SI7021_MEASRH_NOHOLD_CMD     (0xF5)
-#define MGOS_SI7021_MEASTEMP_HOLD_CMD     (0xE3)
-#define MGOS_SI7021_MEASTEMP_NOHOLD_CMD   (0xF3)
-#define MGOS_SI7021_READPREVTEMP_CMD      (0xE0)
-#define MGOS_SI7021_RESET_CMD             (0xFE)
-#define MGOS_SI7021_WRITERHT_REG_CMD      (0xE6)
-#define MGOS_SI7021_READRHT_REG_CMD       (0xE7)
-#define MGOS_SI7021_WRITEHEATER_REG_CMD   (0x51)
-#define MGOS_SI7021_READHEATER_REG_CMD    (0x11)
-#define MGOS_SI7021_ID1_CMD               (0xFA0F)
-#define MGOS_SI7021_ID2_CMD               (0xFCC9)
-#define MGOS_SI7021_FIRMVERS_CMD          (0x84B8)
+#define MGOS_SI7021_MEASRH_HOLD_CMD        (0xE5)
+#define MGOS_SI7021_MEASRH_NOHOLD_CMD      (0xF5)
+#define MGOS_SI7021_MEASTEMP_HOLD_CMD      (0xE3)
+#define MGOS_SI7021_MEASTEMP_NOHOLD_CMD    (0xF3)
+#define MGOS_SI7021_READPREVTEMP_CMD       (0xE0)
+#define MGOS_SI7021_RESET_CMD              (0xFE)
+#define MGOS_SI7021_WRITERHT_REG_CMD       (0xE6)
+#define MGOS_SI7021_READRHT_REG_CMD        (0xE7)
+#define MGOS_SI7021_WRITEHEATER_REG_CMD    (0x51)
+#define MGOS_SI7021_READHEATER_REG_CMD     (0x11)
+#define MGOS_SI7021_ID1_CMD                (0xFA0F)
+#define MGOS_SI7021_ID2_CMD                (0xFCC9)
+#define MGOS_SI7021_FIRMVERS_CMD           (0x84B8)
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 struct mgos_si7021 {
-  struct mgos_i2c *i2c;
-  uint8_t i2caddr;
+  struct mgos_i2c *        i2c;
+  uint8_t                  i2caddr;
   struct mgos_si7021_stats stats;
 
-  float humidity, temperature;
+  float                    humidity, temperature;
 };
 
 #ifdef __cplusplus
